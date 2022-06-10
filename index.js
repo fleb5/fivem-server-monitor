@@ -7,7 +7,12 @@ async function __________(__, ___, _________) {
         .then((_____) => { ______
             .get(`http://${__}:${___}/info.json`, { timeout: 3000 })
             .then((____) => {
-                console.log(`Server: ${____.data.server} \nProject name: ${____.data.vars.sv_projectName} \nProject desc: ${____.data.vars.sv_projectDesc} \nPlayers: ${(_____.data).length + "/" + ____.data.vars.sv_maxClients} \nGame build: ${____.data.vars.sv_enforceGameBuild} \nScripthook allowed: ${____.data.vars.sv_scriptHookAllowed} \nLicense key token: ${____.data.vars.sv_licenseKeyToken} \n\nSearching info for id: ${_________} \n Id: ${_____.data.find(____________ => ____________.id == _________).id} \nIp: ${_____.data.find(____________ => ____________.id == _________).endpoint} \nPing: ${_____.data.find(____________ => ____________.id == _________).ping} \nSteam name: ${_____.data.find(____________ => ____________.id == _________).name} \nIdentifiers: ${_____.data.find(____________ => ____________.id == _________).identifiers}`);
+                console.log(`Server: ${____.data.server} \nProject name: ${____.data.vars.sv_projectName} \nProject desc: ${____.data.vars.sv_projectDesc} \nPlayers: ${(_____.data).length + "/" + ____.data.vars.sv_maxClients} \nGame build: ${____.data.vars.sv_enforceGameBuild} \nScripthook allowed: ${____.data.vars.sv_scriptHookAllowed} \nLicense key token: ${____.data.vars.sv_licenseKeyToken}`);
+                try{
+                  console.log(`\nSearching info for id: ${_________} \nId: ${_____.data.find(____________ => ____________.id == _________).id} \nIp: ${_____.data.find(____________ => ____________.id == _________).endpoint} \nPing: ${_____.data.find(____________ => ____________.id == _________).ping} \nSteam name: ${_____.data.find(____________ => ____________.id == _________).name} \nIdentifiers: ${_____.data.find(____________ => ____________.id == _________).identifiers}`);
+                }catch(error){ 
+                  console.log(`\nInvalid player id: ${_________}`);
+                }
             }).catch((error) => { 
               console.log(`Unable to connect to the server: ${__}:${___}`);
             });
